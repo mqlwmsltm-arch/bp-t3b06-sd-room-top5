@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 배경 -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Geometric pattern -->
+  <circle cx="1148" cy="606" r="55" fill="#1a1a2e" opacity="0.19"/>
+    <circle cx="895" cy="636" r="50" fill="#1a1a2e" opacity="0.07"/>
+    <circle cx="920" cy="631" r="51" fill="#1a1a2e" opacity="0.18"/>
+    <circle cx="628" cy="500" r="89" fill="#1a1a2e" opacity="0.17"/>
+    <circle cx="-96" cy="65" r="72" fill="#1a1a2e" opacity="0.13"/>
+    <circle cx="175" cy="366" r="25" fill="#1a1a2e" opacity="0.17"/>
+    <rect x="1253" y="207" width="66" height="50" rx="8" fill="#0a0a0a" opacity="0.10" transform="rotate(44, 1252, 253)"/>
+    <rect x="313" y="559" width="61" height="48" rx="8" fill="#0a0a0a" opacity="0.04" transform="rotate(17, 705, 122)"/>
+    <rect x="1208" y="639" width="57" height="97" rx="8" fill="#0a0a0a" opacity="0.08" transform="rotate(2, 1130, 137)"/>
+    <rect x="757" y="220" width="51" height="40" rx="8" fill="#0a0a0a" opacity="0.07" transform="rotate(1, -39, 80)"/>
+    <rect x="944" y="698" width="76" height="97" rx="8" fill="#0a0a0a" opacity="0.09" transform="rotate(20, 1116, -86)"/>
+    <rect x="354" y="-70" width="51" height="33" rx="8" fill="#0a0a0a" opacity="0.09" transform="rotate(32, 954, 395)"/>
+    <rect x="1182" y="250" width="24" height="52" rx="8" fill="#0a0a0a" opacity="0.06" transform="rotate(35, 1013, 173)"/>
+    <rect x="1229" y="285" width="37" height="46" rx="8" fill="#0a0a0a" opacity="0.10" transform="rotate(12, 759, 694)"/>
+    <polygon points="417,559 511,747 323,747" fill="#1a1a2e" opacity="0.10"/>
+    <polygon points="-81,566 11,750 -173,750" fill="#1a1a2e" opacity="0.09"/>
+    <polygon points="17,122 57,202 -23,202" fill="#1a1a2e" opacity="0.10"/>
+    <polygon points="699,3 755,115 643,115" fill="#1a1a2e" opacity="0.12"/>
+
+  <!-- Wave at bottom -->
+  <path d="M0,540 C360,585 840,495 1200,540 L1200,630 L0,630Z" fill="#1a1a2e" opacity="0.3"/>
+
+  <!-- 중앙 텍스트 카드 -->
+  <rect x="80" y="195" width="1040" height="260" rx="20" fill="rgba(0,0,0,0.35)" filter="url(#blur-bg)"/>
+  <filter id="blur-bg"><feGaussianBlur stdDeviation="8"/></filter>
+
+  <text x="600" y="270" text-anchor="middle" font-family="'Noto Sans JP','Noto Sans KR','Pretendard',sans-serif" font-size="44" font-weight="700" fill="#ffffff" letter-spacing="2">
+    신도림 룸싸롱 TOP5
+  </text>
+  <text x="600" y="330" text-anchor="middle" font-family="'Noto Sans JP','Noto Sans KR','Pretendard',sans-serif" font-size="22" font-weight="400" fill="rgba(255,255,255,0.85)">
+    신도림 — 룸싸롱
+  </text>
+
+  <!-- Accent line -->
+  <line x1="450" y1="355" x2="750" y2="355" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- 하단 CTA -->
+  <rect x="440" y="385" width="320" height="40" rx="20" fill="#7c3aed" opacity="0.9"/>
+  <text x="600" y="411" text-anchor="middle" font-family="'Noto Sans JP','Noto Sans KR','Pretendard',sans-serif" font-size="16" font-weight="600" fill="#ffffff">
+    ▼ 자세히 보기
+  </text>
+
+  <!-- 상단 브랜드 -->
+  <text x="60" y="55" font-family="'Noto Sans JP','Noto Sans KR','Pretendard',sans-serif" font-size="18" font-weight="600" fill="rgba(255,255,255,0.6)">
+    신도림 신도림 룸싸롱 TOP5 — 룸싸롱
+  </text>
+</svg>

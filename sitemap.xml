@@ -2,25 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://mqlwmsltm-arch.github.io/bp-t3b06-sd-room-top5/</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://mqlwmsltm-arch.github.io/bp-t3b06-sd-room-top5/about.html</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mqlwmsltm-arch.github.io/bp-t3b06-sd-room-top5/blog.html</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://mqlwmsltm-arch.github.io/bp-t3b06-sd-room-top5/posts/field_note-002-12fl8ih.html</loc>
     <lastmod>2026-06-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mqlwmsltm-arch.github.io/bp-t3b06-sd-room-top5/posts/interview-001-14luw7b.html</loc>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -67,8 +73,14 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://mqlwmsltm-arch.github.io/bp-t3b06-sd-room-top5/posts/t3link-002-1ie5zah.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://mqlwmsltm-arch.github.io/bp-t3b06-sd-room-top5/feed.xml</loc>
-    <lastmod>2026-06-15</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
