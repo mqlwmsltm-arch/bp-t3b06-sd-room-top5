@@ -1,424 +1,77 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="noir" data-build="3f9a7c1d">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>신도림 룸싸롱 TOP5 정보 | 신도림 룸싸롱 상세 가이드 2025</title>
-    <meta name="description" content="신도림 룸싸롱 TOP5 선정! 2025년 최신 업소 정보와 실제 방문 리뷰 기반으로 선정한 신도림 최고의 룸싸롱 5곳. 전화 010-6279-0862로 예약 문의하세요.">
-    <meta name="keywords" content="신도림 룸싸롱, 신도림 룸싸롱 TOP5, 신도림 룸싸롱 추천, 신도림 룸싸롱 순위, 신도림 룸싸롱 예약, 신도림 업소">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-neon-void">
-    <link rel="canonical" href="https://t3b06-sd-room-top5.vercel.app/info">
-    <meta property="og:title" content="신도림 룸싸롱 TOP5 - 신도림 최고의 룸싸롱 5곳">
-    <meta property="og:description" content="신도림 룸싸롱 TOP5 선정! 2025년 최신 업소 정보와 실제 방문 리뷰 기반으로 선정한 신도림 최고의 룸싸롱 5곳.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://t3b06-sd-room-top5.vercel.app/info">
-    <meta property="og:locale" content="ko_KR">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* 기존 디자인 시스템 유지 - hamburger-menu, responsive-768 패턴 포함 */
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #111118;
-            --text-primary: #e8e8e8;
-            --text-secondary: #a0a0b0;
-            --accent-neon: #00ffc8;
-            --accent-pink: #ff2d78;
-            --accent-yellow: #ffd700;
-            --accent-blue: #00b4ff;
-            --border-thick: 4px solid var(--accent-neon);
-            --border-thin: 2px solid var(--accent-pink);
-            --font-mono: 'Courier New', Courier, monospace;
-            --font-sans: 'Segoe UI', Roboto, system-ui, sans-serif;
-            --spacing-unit: 1.2rem;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-unit);
-        }
-
-        /* Hamburger menu base */
-        .menu-toggle {
-            display: none;
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            padding: 10px;
-            background: transparent;
-            border: none;
-        }
-
-        .hamburger span {
-            display: block;
-            width: 28px;
-            height: 3px;
-            margin: 5px 0;
-            background: var(--accent-neon);
-            transition: all 0.3s ease;
-        }
-
-        /* Header */
-        header {
-            border-bottom: var(--border-thick);
-            padding: var(--spacing-unit) 0;
-            background: var(--bg-secondary);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-mono);
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--accent-neon);
-            text-decoration: none;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-        }
-
-        .logo span {
-            color: var(--accent-pink);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 0.8rem;
-        }
-
-        nav ul li a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 0.4rem 1rem;
-            border: var(--border-thin);
-            font-size: 0.9rem;
-            transition: all 0.2s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        nav ul li a:hover,
-        nav ul li a.active {
-            color: var(--accent-neon);
-            border-color: var(--accent-neon);
-            background: rgba(0, 255, 200, 0.05);
-        }
-
-        nav ul li a.active {
-            background: rgba(0, 255, 200, 0.1);
-            color: var(--accent-neon);
-            border: var(--border-thick);
-            font-weight: 600;
-        }
-
-        /* Main content */
-        main {
-            padding: calc(var(--spacing-unit) * 2) 0;
-        }
-
-        .page-title {
-            font-family: var(--font-mono);
-            font-size: 2.6rem;
-            font-weight: 800;
-            color: var(--accent-neon);
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            margin-bottom: 0.5rem;
-            line-height: 1.1;
-            text-shadow: 2px 2px 0 var(--accent-pink);
-        }
-
-        .page-subtitle {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            margin-bottom: calc(var(--spacing-unit) * 2);
-            border-left: 4px solid var(--accent-pink);
-            padding-left: 1rem;
-        }
-
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-unit);
-            margin-bottom: calc(var(--spacing-unit) * 2);
-        }
-
-        .info-card {
-            background: var(--bg-secondary);
-            border: var(--border-thin);
-            padding: var(--spacing-unit);
-            transition: border-color 0.2s;
-        }
-
-        .info-card:hover {
-            border-color: var(--accent-neon);
-        }
-
-        .info-card h3 {
-            font-family: var(--font-mono);
-            color: var(--accent-yellow);
-            font-size: 1.3rem;
-            text-transform: uppercase;
-            margin-bottom: 0.8rem;
-            border-bottom: 1px solid var(--accent-yellow);
-            padding-bottom: 0.5rem;
-        }
-
-        .info-card p,
-        .info-card ul {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .info-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .info-card ul li {
-            padding: 0.4rem 0;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
-        }
-
-        .info-card ul li::before {
-            content: '▶ ';
-            color: var(--accent-pink);
-        }
-
-        .cta-block {
-            background: linear-gradient(135deg, var(--bg-secondary), #0f1923);
-            border: var(--border-thick);
-            padding: calc(var(--spacing-unit) * 1.5);
-            text-align: center;
-            margin: calc(var(--spacing-unit) * 2) 0;
-        }
-
-        .cta-block h2 {
-            font-family: var(--font-mono);
-            font-size: 1.8rem;
-            color: var(--accent-neon);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-        }
-
-        .cta-block p {
-            color: var(--text-secondary);
-            margin-bottom: 0.8rem;
-            font-size: 1rem;
-        }
-
-        .cta-phone {
-            display: inline-block;
-            font-family: var(--font-mono);
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--accent-yellow);
-            text-decoration: none;
-            border: 2px solid var(--accent-yellow);
-            padding: 0.5rem 1.5rem;
-            transition: all 0.3s;
-        }
-
-        .cta-phone:hover {
-            background: var(--accent-yellow);
-            color: var(--bg-primary);
-        }
-
-        .faq-section {
-            margin-top: calc(var(--spacing-unit) * 2);
-        }
-
-        .faq-section h2 {
-            font-family: var(--font-mono);
-            font-size: 1.8rem;
-            color: var(--accent-neon);
-            text-transform: uppercase;
-            margin-bottom: var(--spacing-unit);
-            border-bottom: var(--border-thick);
-            padding-bottom: 0.5rem;
-        }
-
-        .faq-item {
-            background: var(--bg-secondary);
-            border: var(--border-thin);
-            margin-bottom: 0.5rem;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: var(--spacing-unit);
-            font-weight: bold;
-            color: var(--accent-pink);
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: var(--font-mono);
-            text-transform: uppercase;
-            font-size: 1.05rem;
-        }
-
-        .faq-question::after {
-            content: '+';
-            font-size: 1.5rem;
-            color: var(--accent-neon);
-            transition: transform 0.3s;
-        }
-
-        .faq-item[open] .faq-question::after {
-            content: '−';
-        }
-
-        .faq-answer {
-            padding: 0 var(--spacing-unit) var(--spacing-unit);
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        /* Footer */
-        footer {
-            border-top: var(--border-thick);
-            padding: var(--spacing-unit) 0;
-            text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-            margin-top: calc(var(--spacing-unit) * 2);
-        }
-
-        footer a {
-            color: var(--accent-neon);
-            text-decoration: none;
-        }
-
-        /* Responsive 768 */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .menu-toggle:checked ~ .hamburger span:nth-child(1) {
-                transform: rotate(45deg) translate(6px, 6px);
-            }
-
-            .menu-toggle:checked ~ .hamburger span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .menu-toggle:checked ~ .hamburger span:nth-child(3) {
-                transform: rotate(-45deg) translate(6px, -6px);
-            }
-
-            .menu-toggle:checked ~ nav {
-                display: block;
-            }
-
-            nav {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: var(--bg-primary);
-                border-bottom: var(--border-thick);
-                padding: var(--spacing-unit);
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            nav ul li a {
-                display: block;
-                text-align: center;
-                padding: 0.8rem;
-            }
-
-            .header-inner {
-                position: relative;
-            }
-
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .page-title {
-                font-size: 1.8rem;
-            }
-
-            .cta-phone {
-                font-size: 1.4rem;
-                padding: 0.4rem 1rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<title>신도림 룸싸롱 TOP5 — 정보</title>
+<meta name="description" content="신도림에 위치한 룸싸롱을 처음 찾는 이용자를 위해 상세한 비용 항목, 인원·시간대·목적별 변동 요인, 서비스 종류 및 주의사항을 종합적으로 안내합니다.">
+<meta name="keywords" content="신도림, 룸싸롱, 정보, 비용 상세, 이용 가이드, 주의사항, FAQ">
+<link rel="canonical" href="https://sindorim-room-review.link-hub.org/about.html">
+<meta property="og:title" content="신도림 룸싸롱 TOP5 — 정보">
+<meta property="og:description" content="신도림 룸싸롱 이용 전 반드시 알아야 할 비용 구조와 상황별 선택 포인트를 한눈에 정리했습니다.">
+<meta property="og:url" content="https://sindorim-room-review.link-hub.org/about.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="container header-inner">
-            <a href="/" class="logo">신도림<span>룸</span>TOP5</a>
-            <input type="checkbox" id="menu-toggle" class="menu-toggle" hidden>
-            <label for="menu-toggle" class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <nav>
-                <ul>
-                    <li><a href="/">홈</a></li>
-                    <li><a href="/list">TOP5 리스트</a></li>
-                    <li><a href="/info" class="active">정보</a></li>
-                    <li><a href="/review">리뷰</a></li>
-                    <li><a href="/contact">문의</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<nav class="t-nav-dxb2">
+  <div class="m-ico-w4i8"><a href="/">HOME</a></div>
+  <div class="m-ico-w4i8"><a href="/ranking">TOP5</a></div>
+  <div class="m-ico-w4i8"><a href="/info">정보</a></div>
+  <div class="m-ico-w4i8"><a href="/faq">FAQ</a></div>
+  <div class="m-ico-w4i8"><a href="/contact">CONTACT</a></div>
+  <div class="hamburger-menu">☰</div>
+</nav>
 
-    <main class="container">
-        <h1 class="page-title">신도림 룸싸롱 정보</h1>
-        <p class="page-subtitle">2025년 신도림 상권 분석, 업소 선택 기준, 예약 가이드 — 전문가가 직접 검증한 데이터 기반 정보</p>
+<main>
+  <section class="t-wrap-rau9">
+    <h1>신도림 룸싸롱, 지금 바로 파악해야 할 핵심 정보</h1>
+    <p>신도림은 교통이 편리하고 다양한 엔터테인먼트 시설이 밀집한 지역입니다. 이곳에 자리 잡은 룸싸롱은 고급스러운 인테리어와 다양한 서비스 옵션을 제공해, 방문 전 미리 알아두면 큰 도움이 됩니다. 이 페이지에서는 비용 구조, 인원·시간대·목적별 변동 요인, 반드시 확인해야 할 안전·법적 요소 등을 상세히 설명합니다.</p>
+    <p>단순히 가격표만 보는 것이 아니라, 실제 이용 상황을 가정해 어떤 요소가 비용에 영향을 미치는지, 어떤 기준으로 업체를 선택하면 후회가 적은지에 초점을 맞추었습니다. 독자에게는 ‘다음에 어디를 선택할까’라는 고민을 확실히 해결할 수 있는 로드맵을 제공합니다.</p>
+  </section>
 
-        <div class="info-grid">
-            <div class="info-card">
-                <h3>🏙️ 신도림 상권 개요</h3>
-                <p>신도림은 서울 서남권 최대 상업·유흥 밀집 지역으로, 2025년 기준 약 120여 개의 유흥업소가 영업 중입니다. 지하철 1·2호선 환승역인 신도림역을 중심으로 도보 5분 이내에 전체 업소의 70%가 위치해 있어 접근성이 탁월합니다. 특히 테크노마트 인근과 대림로 변에 고급 룸싸롱이 집중 분포되어 있으며, 최신 리모델링을 거친 업소들이 지속적으로 증가 추세입니다.</p>
-            </div>
-            <div class="info-card">
-                <h3>📊 룸싸롱 선택 기준</h3>
-                <ul>
-                    <li>시설 연식 및 리모델링 여부 (3년 이내 리뉴얼 선호)</li>
-                    <li>주류 보유량 및 칵테일 메뉴 다양성</li>
-                    <li>마담 및 직원 응대 서비스 평가</li>
-                    <li>주차 용량 (신도림 지역 주차 공간 협소)</li>
-                    <li>가격 투명성 (사전 견적 제공 업소 우대)</li>
-                    <li>실제 고
+  <section class="m-grid-jl5v">
+    <h2>인원·시간대·목적에 따른 요금 변동</h2>
+    <p>대부분의 신도림 룸싸롱은 2인부터 8인까지 다양한 인원을 수용합니다. 인원수가 증가할수록 기본 요금 외에 추가 인원당 요금이 부과되며, 이때 적용되는 할인율은 업체마다 다릅니다. 예를 들어, 4인 이상 예약 시 5%~10% 할인 혜택을 제공하거나, 특정 시간대(심야)에 추가 비용을 부과하는 경우가 흔합니다.</p>
+    <p>시간대 역시 요금에 큰 영향을 미칩니다. 평일 낮시간(오전 10시~오후 5시)에는 ‘데이 타임’ 요금이 적용돼 기본 요금 대비 15%~20% 저렴합니다. 반대로 주말 저녁(오후 6시~자정)과 신도림 클럽이 붐비는 새벽(자정~새벽 3시)에는 ‘프라임 타임’ 요금이 붙어 기본 요금에 30%~40%가 더해집니다. 목적에 따라서는 ‘비즈니스 미팅’ 옵션이 별도 비용을 요구하거나, ‘파티·이벤트’ 패키지에서 포함 서비스가 달라지는 점을 체크해야 합니다.</p>
+  </section>
+
+  <section class="m-grid-jl5v">
+    <h2>서비스 종류와 포함·제외 항목</h2>
+    <p>‘베이직’ 패키지는 최소 시간(1시간)과 기본 음료, 라이트 마사지가 포함됩니다. 이 외에 ‘프리미엄’ 패키지는 고급 주류, 전용 라운지 이용, 맞춤형 마사지 및 엔터테인먼트 서비스를 추가로 제공합니다. 또 ‘VIP’ 패키지는 전용 전용 방, 전용 플로어 직원, 프라이빗 차량 호출 서비스가 포함되며, 가격은 기본 요금의 2배 이상이 되기도 합니다.</p>
+    <p>포함되지 않는 항목은 일반적으로 ‘추가 음료·주류’, ‘특별 주문 마사지’, ‘외부 촬영·녹화’ 등이며, 이때는 별도로 청구됩니다. 업체마다 포함 항목을 명확히 고지하므로, 예약 전 반드시 “포함 내역”과 “추가 비용 항목”을 확인하고 문서로 남겨 두는 것이 좋습니다.</p>
+  </section>
+
+  <section class="m-grid-jl5v">
+    <h2>안전·법적 고려사항</h2>
+    <p>신도림은 서울시 관내에서 영업 허가를 받은 업체만 운영됩니다. 영업시간, 연령 제한, 음주·흡연 구역 구분 등은 법적으로 명시되어 있으며, 위반 시 영업 정지·벌금이 부과됩니다. 방문 전 해당 업체가 관할 구청에 등록된 사업자 등록증을 보유하고 있는지, 영업 허가증을 공개하고 있는지 확인하세요.</p>
+    <p>또한, 개인 정보 보호와 안전을 위해 ‘보안 카메라’와 ‘출입 통제 시스템’이 설치된 업체를 선택하는 것이 좋습니다. 이용 중 문제가 발생했을 경우, 즉시 담당 매니저에게 신고하고 필요시 경찰에 신고하는 절차를 숙지해 두면 사후 대처가 원활합니다.</p>
+  </section>
+
+  <section class="m-grid-jl5v">
+    <h2>예약 팁과 현장 체크리스트</h2>
+    <p>예약은 온라인 전용 폼, 전화, 혹은 현장 직접 방문을 통해 가능합니다. 온라인 예약 시 할인 쿠폰이나 사전 결제 할인을 받을 수 있으며, 결제 전에는 반드시 환불 정책을 확인하세요. 전화 예약은 실시간 상담을 통해 맞춤형 서비스를 제안받을 수 있는 장점이 있습니다.</p>
+    <p>현장에 도착했을 때는 입구에서 제공되는 ‘이용 안내서’를 꼼꼼히 읽고, 직원에게 제공되는 서비스 목록과 비용표를 다시 한번 확인합니다. 특히 ‘시간 초과’ 요금이 어떻게 적용되는지, ‘추가 인원’이 발생할 경우 어떤 절차가 필요한지를 명확히 물어보세요. 이렇게 사전 대비를 하면 불필요한 추가 비용을 방지할 수 있습니다.</p>
+  </section>
+
+  <section class="m-grid-jl5v">
+    <h2>자주 묻는 질문 (FAQ)</h2>
+    <p><strong>Q1. 최소 이용 시간은 얼마인가요?</strong><br>
+    대부분 1시간이 최소이며, 2시간 이상 예약 시 할인 혜택을 제공하는 곳이 많습니다. 다만, 특정 프리미엄 룸은 최소 2시간 이용이 요구될 수 있습니다.</p>
+    <p><strong>Q2. 여성 전용 룸이 있나요?</strong><br>
+    현재 신도림 내 대부분의 룸싸롱은 성별 구분 없이 운영됩니다. 여성 전용·여성 전용 예약을 원한다면 사전에 고객센터에 문의해 전용 공간이 있는지 확인하세요.</p>
+    <p><strong>Q3. 현금 결제와 카드 결제 중 어느 것이 유리한가요?</strong><br>
+    현금 결제는 즉시 할인 쿠폰 적용이 가능하지만, 신용카드 결제는 포인트 적립 및 영수증 발행이 편리합니다. 일부 업체는 현금 결제 시 5%~10% 추가 할인을 제공하니, 두 옵션을 비교해 선택하세요.</p>
+    <p><strong>Q4. 예약 취소 시 환불은 어떻게 되나요?</strong><br>
+    대부분 24시간 전 취소는 전액 환불, 12시간 전 취소는 50% 환불, 그 이하 취소는 환불이 불가합니다. 예약 시 환불 정책을 반드시 확인하고, 가능한 경우 ‘취소 가능’ 옵션을 선택하는 것이 안전합니다.</p>
+  </section>
+</main>
+
+<footer class="t-nav-dxb2">
+  <div class="m-ico-w4i8"><a href="/privacy">개인정보 처리방침</a></div>
+  <div class="m-ico-w4i8"><a href="/terms">이용약관</a></div>
+  <div class="m-ico-w4i8"><a href="/sitemap">사이트맵</a></div>
+  <p>&copy; 2026 신도림 룸싸롱 가이드. All rights reserved.</p>
+</footer>
 </body>
 </html>
