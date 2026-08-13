@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (3/6) · t3b06-sd-room-top5</title>
+  <meta name="description" content="t3b06-sd-room-top5에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://sindorim-room-review.link-hub.org/posts-3.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ 
+ :root {
+ --bg-color: #031b4e;
+ --bg-card: #082f6b;
+ --accent: #60a5fa;
+ --text: #e2e8f0;
+ --text-muted: #94a3b8;
+ --font-stack: 'Inter', sans-serif;
+ --border: rgba(255, 255, 255, 0.08);
+ --glass-bg: rgba(255, 255, 255, 0.02);
+ --glass-border: rgba(255, 255, 255, 0.05);
+ }
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ body {
+ background-color: var(--bg-color);
+ color: var(--text);
+ font-family: var(--font-stack);
+ line-height: 1.8;
+ letter-spacing: -0.01em;
+ padding: 0 24px;
+ overflow-x: hidden;
+ }
+ .wrapper {
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 80px 0;
+ }
+ header {
+ border-bottom: 1px solid var(--border);
+ padding-bottom: 30px;
+ margin-bottom: 60px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+ .brand {
+ font-size: 1.6rem;
+ font-weight: 900;
+ color: #fff;
+ text-transform: uppercase;
+ letter-spacing: 0.06em;
+ text-decoration: none;
+ transition: color 0.3s, transform 0.3s;
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ }
+ .brand:hover {
+ color: var(--accent);
+ transform: translateX(2px);
+ }
+ nav {
+ display: flex;
+ gap: 28px;
+ }
+ nav a {
+ color: var(--text-muted);
+ text-decoration: none;
+ font-size: 1rem;
+ font-weight: 700;
+ transition: color 0.3s;
+ position: relative;
+ }
+ nav a::after {
+ content: '';
+ position: absolute;
+ width: 0;
+ height: 2px;
+ bottom: -6px;
+ left: 0;
+ background-color: var(--accent);
+ transition: width 0.3s;
+ }
+ nav a:hover {
+ color: #fff;
+ }
+ nav a:hover::after {
+ width: 100%;
+ }
+ main {
+ padding-bottom: 60px;
+ }
+ .badge {
+ display: inline-block;
+ padding: 6px 14px;
+ background: rgba(255, 255, 255, 0.03);
+ border: 1px solid var(--glass-border);
+ border-radius: 20px;
+ font-size: 0.8rem;
+ font-weight: 800;
+ color: var(--accent);
+ margin-bottom: 28px;
+ text-transform: uppercase;
+ letter-spacing: 0.12em;
+ }
+ h1 {
+ font-size: 3.2rem;
+ font-weight: 900;
+ color: #fff;
+ line-height: 1.2;
+ margin-bottom: 36px;
+ letter-spacing: -0.03em;
+ background: linear-gradient(to right, #ffffff 30%, var(--accent) 100%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ }
+ .hero-container {
+ position: relative;
+ border-radius: 20px;
+ padding: 50px;
+ background: linear-gradient(145deg, var(--bg-card) 0%, rgba(255,255,255,0.01) 100%);
+ border: 1px solid var(--glass-border);
+ margin-bottom: 60px;
+ box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+ overflow: hidden;
+ }
+ .hero-container::before {
+ content: '';
+ position: absolute;
+ top: -50%;
+ left: -50%;
+ width: 200%;
+ height: 200%;
+ background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 60%);
+ pointer-events: none;
+ }
+ .desc-block {
+ font-size: 1.18rem;
+ color: var(--text);
+ margin-bottom: 40px;
+ font-weight: 400;
+ text-align: justify;
+ }
+ .desc-block p {
+ margin-bottom: 24px;
+ text-indent: 4px;
+ }
+ .phone-badge {
+ display: inline-flex;
+ align-items: center;
+ gap: 14px;
+ padding: 20px 40px;
+ background: linear-gradient(135deg, var(--accent) 0%, rgba(255,255,255,0.05) 200%);
+ color: #fff;
+ border-radius: 50px;
+ text-decoration: none;
+ font-weight: 900;
+ font-size: 1.3rem;
+ box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+ transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+ border: 1px solid rgba(255,255,255,0.1);
+ }
+ .phone-badge:hover {
+ transform: translateY(-3px) scale(1.02);
+ box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+ border-color: rgba(255,255,255,0.25);
+ }
+ .cards-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+ gap: 28px;
+ margin-top: 60px;
+ }
+ .card {
+ background: var(--bg-card);
+ border: 1px solid var(--border);
+ padding: 36px;
+ border-radius: 16px;
+ transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+ box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+ }
+ .card:hover {
+ border-color: var(--accent);
+ transform: translateY(-5px);
+ box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+ }
+ .card h3 {
+ font-size: 1.35rem;
+ font-weight: 800;
+ color: #fff;
+ margin-bottom: 16px;
+ }
+ .card p {
+ font-size: 1rem;
+ color: var(--text-muted);
+ line-height: 1.7;
+ }
+ .review-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 20px;
+ font-size: 0.9rem;
+ font-weight: 800;
+ border-bottom: 1px dashed var(--border);
+ padding-bottom: 12px;
+ }
+ .review-stars {
+ color: #fbbf24;
+ letter-spacing: 2px;
+ }
+ .review-nick {
+ color: #fff;
+ }
+ .review-date {
+ color: var(--text-muted);
+ }
+ footer {
+ border-top: 1px solid var(--border);
+ padding-top: 50px;
+ margin-top: 100px;
+ text-align: center;
+ font-size: 0.95rem;
+ color: var(--text-muted);
+ }
+ footer a {
+ color: var(--text-muted);
+ text-decoration: none;
+ margin: 0 14px;
+ font-weight: 700;
+ transition: color 0.3s;
+ }
+ footer a:hover {
+ color: var(--accent);
+ }
+ .blog-link {
+ display: inline-block;
+ margin-top: 28px;
+ color: var(--accent);
+ text-decoration: none;
+ font-weight: 800;
+ border-bottom: 1px solid transparent;
+ transition: border-color 0.3s, transform 0.3s;
+ }
+ .blog-link:hover {
+ border-color: var(--accent);
+ transform: translateX(3px);
+ }
+ @media(max-width: 768px) {
+ body { padding: 0 16px; }
+ .wrapper { padding: 50px 0; }
+ h1 { font-size: 2.2rem; }
+ .hero-container { padding: 28px; }
+ .phone-badge { width: 100%; justify-content: center; font-size: 1.1rem; }
+ header { flex-direction: column; gap: 20px; align-items: flex-start; }
+ nav { width: 100%; justify-content: space-between; }
+ }
+ 
+ </style>
+  <meta property="og:title" content="글 목록 (3/6) · t3b06-sd-room-top5">
+  <meta property="og:description" content="t3b06-sd-room-top5에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://sindorim-room-review.link-hub.org/posts-3.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <a href="index.html" class="brand">👑 신도림 룸싸롱</a>
+ <nav>
+ <a href="index.html">홈</a>
+ <a href="about.html">소개</a>
+ <a href="blog.html">블로그</a>
+ </nav>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 103개 · 3/6 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0425.html">신도림 룸싸롱 TOP5 이용 안내 및 주요 유흥 업종 비교</a>
+        <p class="post-item__summary">신도림 지역에서 유흥 시설 이용을 고려할 때는 사전에 관련 정보를 올바르게 파악하는 것이 중요합니다. 신도림은 주요 대중교통 노선이 교차하는 상권으로 다양한 형태의 유흥업소가 분포해 있어, 방문 목</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0426.html">신도림 룸싸롱 TOP5 탐색 전 확인해야 할 이용 안내</a>
+        <p class="post-item__summary">신도림 일대는 교통이 편리하고 상권이 형성되어 있어 유흥업소 관련 정보를 찾는 사람들의 관심이 꾸준한 지역입니다. 온라인에서 신도림 룸싸롱 TOP5와 같은 주제를 검색하는 이용자들은 각 공간의 분위</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0427.html">신도림 룸싸롱 TOP5 정보를 확인하기 전 알아두어야 할 사항</a>
+        <p class="post-item__summary">신도림 일대는 다양한 상권과 교통 편의성 덕분에 유흥 및 모임 공간을 찾는 수요가 꾸준히 이어지는 지역입니다. 많은 분들이 신도림 룸싸롱 TOP5와 같은 주요 업소 정보를 찾기 이전에 전반적인 시장</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0428.html">신도림 룸싸롱 TOP5 관련 주요 이용 정보 안내</a>
+        <p class="post-item__summary">신도림 일대는 교통의 요충지이자 상권이 발달한 지역으로 다양한 유흥 및 편의 시설이 밀집해 있는 장소입니다. 이 지역에서 제공되는 각종 룸 기반의 유흥 시설을 이용하고자 할 때는 사전 정보 파악이 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0429.html">신도림 룸싸롱 TOP5 이용 관련 가이드 및 주요 트렌드</a>
+        <p class="post-item__summary">서울 신도림 지역은 교통의 요충지로서 다양한 모임과 회식 장소로 자주 언급되는 구역입니다. 신도림 룸싸롱 TOP5 정보를 탐색하는 이용자들은 개별 공간의 분위기, 위생 상태, 예약 절차 및 이용 목</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0430.html">신도림 지역 유흥업소 관련 정보 탐색 시 유의점과 트렌드 안내</a>
+        <p class="post-item__summary">신도림 일대는 교통의 요충지로서 다양한 상권과 편의시설이 밀집해 있어 많은 사람들이 교류하고 방문하는 지역입니다. 이와 함께 야간 시간대에 이용 가능한 다양한 유흥업소 정보에 대한 관심도 지속적으로</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0431.html">신도림 유흥 시설 이용 안내와 가격 비교 사전 점검</a>
+        <p class="post-item__summary">서울 구로구 신도림은 교통 편의성이 높고 상권이 발달하여 여러 형태의 모임 장소와 유흥 시설이 위치해 있습니다. 이 지역에서 룸싸롱 관련 정보를 접할 때에는 개별 업소의 운영 시스템 차이를 미리 이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0432.html">신도림 룸싸롱 이용 안내 및 정보 가이드</a>
+        <p class="post-item__summary">서울 구로구에 위치한 신도림은 편리한 교통망으로 인해 다양한 야간 모임과 회식 장소로 활용되는 지역입니다. 특히 직장인들의 소모임이나 비즈니스 미팅 목적의 유흥 시설을 찾는 수요가 존재하는 곳이기도</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0433.html">신도림 룸싸롱 TOP5 정보 안내 및 이용 가이드</a>
+        <p class="post-item__summary">신도림 지역에서 룸싸롱 TOP5 정보를 검색할 때는 수치화된 순위나 일방적인 평가에 의존하기보다 객관적인 이용 기준을 이해하는 것이 중요합니다. 유흥 시설을 탐색하거나 관련 규정을 파악하려는 이용자</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0434.html">신도림 룸싸롱 TOP5 상권 및 이용 안내</a>
+        <p class="post-item__summary">서울 구로구 신도림 일대는 교통의 요충지이자 상업 지구가 밀집해 있어 여러 유흥업소와 회식 공간이 형성되어 있습니다. 신도림역 주변은 유동 인구가 많아 직장인이나 접대 목적 방문객이 자주 찾는 지역</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0435.html">신도림 룸싸롱 TOP5 안내 및 예산 계획 기준</a>
+        <p class="post-item__summary">신도림 지역은 서울 서남부의 주요 교통 요충지로서 다양한 상업 시설과 상권이 형성되어 있는 대표적인 구역입니다. 해당 지역에서 신도림 룸싸롱 TOP5 관련 정보를 탐색하는 이용자가 많지만, 업소별로</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0436.html">신도림 룸싸롱 TOP5 정보 안내</a>
+        <p class="post-item__summary">서울 구로구 신도림은 교통의 요충지이자 상권이 발달한 지역으로, 다양한 유흥업소와 모임 공간이 위치해 있습니다. 직장인의 회식이나 미팅 등을 목적으로 이 지역을 찾는 이용객이 많으며, 온라인상에서는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0437.html">신도림 룸싸롱 TOP5 이용 전 안내 사항</a>
+        <p class="post-item__summary">신도림 일대는 교통의 요충지로서 다양한 모임과 비즈니스 미팅을 위한 유흥 시설이 밀집해 있습니다. 지역 내 업소를 검토할 때에는 단순히 온라인 순위만 참고하기보다 이용 목적, 예산, 서비스 성격을 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0438.html">신도림 비즈니스 접대 장소 선택 안내</a>
+        <p class="post-item__summary">신도림은 서울 서남부의 교통 요충지로 다양한 상업 시설이 밀집해 있어 비즈니스 미팅과 접대를 위한 장소 탐색이 자주 이루어지는 지역입니다. 기업 간 미팅이나 중요 고객과의 모임을 준비할 때는 참석자</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0439.html">신도림 유흥 상권 및 룸싸롱 TOP5 검색 시 정보 안내</a>
+        <p class="post-item__summary">신도림 일대는 편리한 교통망과 상업 시설이 밀집해 있어 인근 지역 방문객과 다양한 모임 수요가 형성되는 주요 거점입니다. 직장인 회식이나 모임을 목적으로 관련 업소를 찾는 사용자들은 대개 상권 분위</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0440.html">신도림 룸싸롱 상권 특징과 유흥 상권 정보 안내</a>
+        <p class="post-item__summary">신도림 지역은 지하철 1호선과 2호선이 교차하는 서울 서남권의 대표적인 교통 및 상업 거점입니다. 유동 인구가 많고 인근에 오피스 및 다양한 상가 단지가 조성되어 있어, 직장인들의 회식이나 각종 비</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0441.html">신도림 룸싸롱 TOP5 정보와 이용 가이드</a>
+        <p class="post-item__summary">신도림 일대는 교통 요충지로서 다양한 유흥업소와 모임 장소가 밀집한 지역입니다. 많은 분들이 모임이나 접대를 위해 신도림 룸싸롱 TOP5 정보를 검색하곤 합니다. 그러나 단순한 순위 정보만 확인하기</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0442.html">신도림 룸싸롱 TOP5 관련 안내 정보</a>
+        <p class="post-item__summary">신도림 지역은 교통의 요충지로서 다양한 상권과 모임 공간이 형성되어 있는 곳입니다. 이에 따라 신도림 룸싸롱 TOP5라는 주제로 관련 정보를 찾는 수요도 지속적으로 존재합니다. 하지만 유흥시설 정보</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0443.html">신도림 룸싸롱 이용 시 사전 점검 안내</a>
+        <p class="post-item__summary">신도림 지역에서 모임이나 접대를 위해 관련 업소를 검색할 때에는 매장별 시설 규모와 운영 방식을 사전에 확인하는 것이 필요합니다. 개별 업소마다 내부 분위기와 이용 환경에 차이가 존재하므로, 본래 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260807-0444.html">신도림 비즈니스 미팅과 유흥 시설 이용 시 참고사항</a>
+        <p class="post-item__summary">신도림은 서울 서남권의 교통 요충지로서 다양한 비즈니스 미팅과 소모임이 자주 개최되는 지역입니다. 신도림 룸싸롱 TOP5 관련 정보를 탐색하는 이용자라면 단순히 업소 명단만을 확인하기보다는 사전 준</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <a class="pager__link" href="posts-2.html">2</a>
+      <span class="pager__current">3</span>
+      <a class="pager__link" href="posts-4.html">4</a>
+      <a class="pager__link" href="posts-5.html">5</a>
+      <a class="pager__link" href="posts-6.html">6</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>

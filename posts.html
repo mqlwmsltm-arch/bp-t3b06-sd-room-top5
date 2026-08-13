@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/6) · t3b06-sd-room-top5</title>
+  <meta name="description" content="t3b06-sd-room-top5에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://sindorim-room-review.link-hub.org/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ 
+ :root {
+ --bg-color: #031b4e;
+ --bg-card: #082f6b;
+ --accent: #60a5fa;
+ --text: #e2e8f0;
+ --text-muted: #94a3b8;
+ --font-stack: 'Inter', sans-serif;
+ --border: rgba(255, 255, 255, 0.08);
+ --glass-bg: rgba(255, 255, 255, 0.02);
+ --glass-border: rgba(255, 255, 255, 0.05);
+ }
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ body {
+ background-color: var(--bg-color);
+ color: var(--text);
+ font-family: var(--font-stack);
+ line-height: 1.8;
+ letter-spacing: -0.01em;
+ padding: 0 24px;
+ overflow-x: hidden;
+ }
+ .wrapper {
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 80px 0;
+ }
+ header {
+ border-bottom: 1px solid var(--border);
+ padding-bottom: 30px;
+ margin-bottom: 60px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+ .brand {
+ font-size: 1.6rem;
+ font-weight: 900;
+ color: #fff;
+ text-transform: uppercase;
+ letter-spacing: 0.06em;
+ text-decoration: none;
+ transition: color 0.3s, transform 0.3s;
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ }
+ .brand:hover {
+ color: var(--accent);
+ transform: translateX(2px);
+ }
+ nav {
+ display: flex;
+ gap: 28px;
+ }
+ nav a {
+ color: var(--text-muted);
+ text-decoration: none;
+ font-size: 1rem;
+ font-weight: 700;
+ transition: color 0.3s;
+ position: relative;
+ }
+ nav a::after {
+ content: '';
+ position: absolute;
+ width: 0;
+ height: 2px;
+ bottom: -6px;
+ left: 0;
+ background-color: var(--accent);
+ transition: width 0.3s;
+ }
+ nav a:hover {
+ color: #fff;
+ }
+ nav a:hover::after {
+ width: 100%;
+ }
+ main {
+ padding-bottom: 60px;
+ }
+ .badge {
+ display: inline-block;
+ padding: 6px 14px;
+ background: rgba(255, 255, 255, 0.03);
+ border: 1px solid var(--glass-border);
+ border-radius: 20px;
+ font-size: 0.8rem;
+ font-weight: 800;
+ color: var(--accent);
+ margin-bottom: 28px;
+ text-transform: uppercase;
+ letter-spacing: 0.12em;
+ }
+ h1 {
+ font-size: 3.2rem;
+ font-weight: 900;
+ color: #fff;
+ line-height: 1.2;
+ margin-bottom: 36px;
+ letter-spacing: -0.03em;
+ background: linear-gradient(to right, #ffffff 30%, var(--accent) 100%);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ }
+ .hero-container {
+ position: relative;
+ border-radius: 20px;
+ padding: 50px;
+ background: linear-gradient(145deg, var(--bg-card) 0%, rgba(255,255,255,0.01) 100%);
+ border: 1px solid var(--glass-border);
+ margin-bottom: 60px;
+ box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+ overflow: hidden;
+ }
+ .hero-container::before {
+ content: '';
+ position: absolute;
+ top: -50%;
+ left: -50%;
+ width: 200%;
+ height: 200%;
+ background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 60%);
+ pointer-events: none;
+ }
+ .desc-block {
+ font-size: 1.18rem;
+ color: var(--text);
+ margin-bottom: 40px;
+ font-weight: 400;
+ text-align: justify;
+ }
+ .desc-block p {
+ margin-bottom: 24px;
+ text-indent: 4px;
+ }
+ .phone-badge {
+ display: inline-flex;
+ align-items: center;
+ gap: 14px;
+ padding: 20px 40px;
+ background: linear-gradient(135deg, var(--accent) 0%, rgba(255,255,255,0.05) 200%);
+ color: #fff;
+ border-radius: 50px;
+ text-decoration: none;
+ font-weight: 900;
+ font-size: 1.3rem;
+ box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+ transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+ border: 1px solid rgba(255,255,255,0.1);
+ }
+ .phone-badge:hover {
+ transform: translateY(-3px) scale(1.02);
+ box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+ border-color: rgba(255,255,255,0.25);
+ }
+ .cards-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+ gap: 28px;
+ margin-top: 60px;
+ }
+ .card {
+ background: var(--bg-card);
+ border: 1px solid var(--border);
+ padding: 36px;
+ border-radius: 16px;
+ transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+ box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+ }
+ .card:hover {
+ border-color: var(--accent);
+ transform: translateY(-5px);
+ box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+ }
+ .card h3 {
+ font-size: 1.35rem;
+ font-weight: 800;
+ color: #fff;
+ margin-bottom: 16px;
+ }
+ .card p {
+ font-size: 1rem;
+ color: var(--text-muted);
+ line-height: 1.7;
+ }
+ .review-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-bottom: 20px;
+ font-size: 0.9rem;
+ font-weight: 800;
+ border-bottom: 1px dashed var(--border);
+ padding-bottom: 12px;
+ }
+ .review-stars {
+ color: #fbbf24;
+ letter-spacing: 2px;
+ }
+ .review-nick {
+ color: #fff;
+ }
+ .review-date {
+ color: var(--text-muted);
+ }
+ footer {
+ border-top: 1px solid var(--border);
+ padding-top: 50px;
+ margin-top: 100px;
+ text-align: center;
+ font-size: 0.95rem;
+ color: var(--text-muted);
+ }
+ footer a {
+ color: var(--text-muted);
+ text-decoration: none;
+ margin: 0 14px;
+ font-weight: 700;
+ transition: color 0.3s;
+ }
+ footer a:hover {
+ color: var(--accent);
+ }
+ .blog-link {
+ display: inline-block;
+ margin-top: 28px;
+ color: var(--accent);
+ text-decoration: none;
+ font-weight: 800;
+ border-bottom: 1px solid transparent;
+ transition: border-color 0.3s, transform 0.3s;
+ }
+ .blog-link:hover {
+ border-color: var(--accent);
+ transform: translateX(3px);
+ }
+ @media(max-width: 768px) {
+ body { padding: 0 16px; }
+ .wrapper { padding: 50px 0; }
+ h1 { font-size: 2.2rem; }
+ .hero-container { padding: 28px; }
+ .phone-badge { width: 100%; justify-content: center; font-size: 1.1rem; }
+ header { flex-direction: column; gap: 20px; align-items: flex-start; }
+ nav { width: 100%; justify-content: space-between; }
+ }
+ 
+ </style>
+  <meta property="og:title" content="글 목록 (1/6) · t3b06-sd-room-top5">
+  <meta property="og:description" content="t3b06-sd-room-top5에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://sindorim-room-review.link-hub.org/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <a href="index.html" class="brand">👑 신도림 룸싸롱</a>
+ <nav>
+ <a href="index.html">홈</a>
+ <a href="about.html">소개</a>
+ <a href="blog.html">블로그</a>
+ </nav>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 103개 · 1/6 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/field_note-001-1ubrdu1.html">신도림 룸싸롱 TOP5</a>
+        <p class="post-item__summary">신도림 지역에서 룸싸롱 이용을 고민하는 분들을 위해 만족스러운 선택을 돕는 다양한 정보와 기준을 소개합니다. 구로구와 영등포구 경계에 위치한 신도림은 편리한 교통 덕분에 많은 이들이 찾는 대표적인 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/field_note-002-12fl8ih.html">신도림 룸싸롱 TOP5 현장에서 놓치기 쉬운 포인트를 기록해봤다</a>
+        <p class="post-item__summary">신도림 지역은 교통이 편리하고 상업 시설이 밀집해 있어 다양한 룸싸롱이 모여 있습니다. 이용자는 위치 접근성과 주변 편의 시설을 고려해 방문 시간을 계획하는 것이 좋습니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/field_note-002-wy49lq.html">신도림 룸싸롱 TOP5 현장에서 놓치기 쉬운 포인트를 기록해봤다</a>
+        <p class="post-item__summary">신도림 지역에서 유흥 공간이나 룸싸롱 TOP5 관련 정보를 알아보실 때는 사전에 점검해야 할 요소들이 많습니다. 위치적인 특성상 교통편과 접근성이 뛰어난 편이지만, 방문 시 목적이나 인원수에 맞는 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0046.html">신도림 룸싸롱 TOP5 정보 확인과 구글 봇 정밀 검진 및 크롤 버짓 밀착 간호</a>
+        <p class="post-item__summary">신도림 룸싸롱 TOP5 리스트를 통해 지역 정보를 파악하듯, 웹사이트 역시 검색 엔진의 건강 상태를 주기적으로 체크해야 합니다. 단순히 나열된 정보보다는 정밀한 진단이 포함된 데이터가 검색 결과에서</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0047.html">신도림 룸싸롱 TOP5 확인 전 알아야 할 구글 틈새 키워드 트래픽 외환 거래 전략</a>
+        <p class="post-item__summary">많은 이들이 신도림 룸싸롱 TOP5 정보를 찾으며 무분별하게 검색 창을 두드리지만, 전략 없는 접근은 성과로 이어지지 않습니다. 특히 온라인상에서 특정 키워드를 통해 트래픽을 유도하려는 시도는 철저</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0048.html">신도림 룸싸롱 TOP5 이용 전 확인하는 구글 알고리즘 고신용 도메인 보증 카드 발급</a>
+        <p class="post-item__summary">신도림 룸싸롱 TOP5 리스트를 검색할 때 사용자들은 가장 신뢰할 수 있는 도메인의 정보를 원합니다. 이는 웹 운영 측면에서 보면 도메인의 신용도가 검색 노출과 방문자 신뢰도에 직접적인 영향을 미친</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0049.html">신도림 룸싸롱 TOP5 대신 살펴보는 마포 홍대 단체 가라오케 예약 가이드</a>
+        <p class="post-item__summary">오랜만에 동창 모임을 계획하며 10명 남짓한 인원이 들어갈 장소를 찾는 일은 생각보다 복잡합니다. 단순한 일반 술집은 소음 때문에 대화가 어렵고, 너무 조용한 곳은 분위기를 띄우기 힘든 경우가 많기</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0050.html">신도림 룸싸롱 TOP5 비교 분석하며 마포 단체 회식용 대형 룸 노래방 가격 정보 확인</a>
+        <p class="post-item__summary">인터넷에서 흔히 접하는 유명 업소 정보가 무조건 최고의 선택이라는 생각은 다소 위험한 발상입니다. 신도림 룸싸롱 TOP5 같은 순위 정보만 믿고 무작정 예약을 시도하다가 정작 필요한 회식 스타일과는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0051.html">신도림 룸싸롱 TOP5 인기도 분석을 넘어선 도메인 지수 탈모 방지 및 앵커 텍스트 이식 가이드</a>
+        <p class="post-item__summary">웹사이트의 가치를 높이기 위해서는 신도림 룸싸롱 TOP5와 같은 단순 키워드 나열을 넘어, 기술적인 충족 조건을 단계별로 확보하는 과정이 필요합니다. 먼저 콘텐츠의 유입 경로를 명확히 하고, 사용자</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0052.html">신도림 룸싸롱 TOP5 업체와 다른 셔츠룸 예약 시 고려할 기준 정리</a>
+        <p class="post-item__summary">혹시 신도림 룸싸롱 TOP5 리스트만 보고 업체 선정을 고민하고 계신가요? 많은 사람이 비슷한 업소 형태라고 생각하여 예약을 진행하지만, 실제 셔츠룸이 추구하는 운영 방식과 기존 룸싸롱의 서비스 기</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0053.html">신도림 룸싸롱 TOP5 정보 확인하는 셔츠룸 사이트 활용법</a>
+        <p class="post-item__summary">많은 이들이 신도림 룸싸롱 TOP5 관련 정보를 찾을 때 막연한 검색에 의존하곤 합니다. 그러나 파편화된 정보를 직접 대조하는 것은 상당한 시간과 노력을 요구하는 번거로운 일입니다. 신뢰할 수 있는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0054.html">신도림 룸싸롱 TOP5 이용 전 고민하는 합정 셔츠룸 단골들이 뽑은 핫플 매거진</a>
+        <p class="post-item__summary">신도림 룸싸롱 TOP5 검색 결과와 인근 지역의 서비스를 비교할 때 많은 이용자가 가격 체계 앞에서 고민합니다. 정액제로 운영되는 곳과 유동적인 주대 모델을 가진 곳 중 어디를 선택할지는 전략적인 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0055.html">신도림 룸싸롱 TOP5 예약 전 꼭 알아야 할 마포 홍대 로컬 럭셔리 밤문화 가이드</a>
+        <p class="post-item__summary">많은 분이 신도림 룸싸롱 TOP5 관련 정보를 접하고 즉흥적으로 예약을 진행했다가 낭패를 보는 경우가 있습니다. 예약 단계에서 가장 흔히 발생하는 실수는 구체적인 확인 없이 구두 약속만을 신뢰하는 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0056.html">신도림 룸싸롱 TOP5 매장 찾을 때 보는 구글 알고리즘 감점 치료 및 백링크 수술실</a>
+        <p class="post-item__summary">신도림 룸싸롱 TOP5 리스트를 작성하는 것만큼이나 중요한 것은 해당 매장의 실질적인 접근성을 확인하는 일입니다. 아무리 좋은 평가를 받는 곳이라도 이동 동선이 복잡하거나 위치 파악이 어렵다면 이용</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0057.html">신도림 룸싸롱 TOP5 정보 확인 전 필수인 마포 코인노래방 방음 시설 비교 가이드</a>
+        <p class="post-item__summary">최근 유흥 정보 검색 과정에서 신도림 룸싸롱 TOP5 순위를 찾는 분들이 많지만, 실제 방문 전 주변 음향 환경을 파악하는 것이 중요합니다. 특히 코인노래방을 자주 이용하는 사용자라면 옆방의 노랫소</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0058.html">신도림 룸싸롱 TOP5 업체 이용 시 알아두는 마포 셔츠룸 예약 시 눈탱이 피하는 법</a>
+        <p class="post-item__summary">흔히들 신도림 룸싸롱 TOP5 명단만 확인하면 안전하다고 생각하지만, 실제 예약 시스템의 불투명성으로 인해 예기치 못한 비용을 치르는 경우가 많습니다. 인터넷상에 떠도는 정보가 항상 정답은 아니라는</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0059.html">신도림 룸싸롱 TOP5 검색처럼 중요한 구글 신뢰 지수 모발이식 솔루션 활용 가이드</a>
+        <p class="post-item__summary">온라인에서 신도림 룸싸롱 TOP5 정보를 찾거나 의료 서비스를 검색할 때 가장 중요한 것은 신뢰할 수 있는 데이터입니다. 특히 모발이식과 같은 전문 분야에서는 정보의 정확성이 곧 안전과 직결됩니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0060.html">신도림 룸싸롱 TOP5 정보 확인을 위한 구글 인덱싱 속도 초고속 광회선 대역폭 최적화</a>
+        <p class="post-item__summary">여러분은 신도림 룸싸롱 TOP5 정보를 찾으실 때 웹페이지가 얼마나 빨리 로딩되는지 체감해 본 적 있으신가요? 정보 탐색의 속도는 결국 데이터 통신 환경과 밀접하게 연관되어 있습니다. 특히 실시간으</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0297.html">신도림 룸싸롱 TOP5 키워드로 알아보는 마곡 유흥 추천정보 가이드</a>
+        <p class="post-item__summary">낯선 지역에서 적절한 장소를 찾지 못해 길을 헤매는 상황은 누구에게나 당혹스러운 일입니다. 신도림 룸싸롱 TOP5 검색 결과가 반드시 본인이 찾는 지역과 일치하지 않을 수 있기에 지리적 요건을 먼저</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0298.html">신도림 룸싸롱 TOP5 찾는 이들을 위한 망원 노래방 추천정보</a>
+        <p class="post-item__summary">많은 이들이 화려한 밤 문화를 즐기기 위해 검색을 하지만, 노래방 이용에 있어 시간대 선택은 중요하지 않다는 오해를 하곤 합니다. 사실 방문하는 시간대에 따라 제공되는 서비스의 질과 여유로운 환경이</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+      <a class="pager__link" href="posts-3.html">3</a>
+      <a class="pager__link" href="posts-4.html">4</a>
+      <a class="pager__link" href="posts-5.html">5</a>
+      <a class="pager__link" href="posts-6.html">6</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
